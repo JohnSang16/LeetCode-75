@@ -21,24 +21,34 @@
 # Output: [0,1]
 
 
-#thoughts:
-#create a dict enumerated with all the values and their corresponding indices
-#have a secondval var that holds the value of target - nth element if its smaller than target
-#return the indices if the second val is found
+#create a hashmap
+#enumerate through the hashmap 
+#calc diff -> target - value in nums
+#if diff exists return indices
+#if not store index values as the values of the hash
+
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        d = dict(enumerate(nums))
-        secondvallst = []
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+       d = {}
 
-        for num in nums: 
-            if target-num > 0:
-                secondvallst += target-num
-        for i in range (len(secondvallst)):
-            if secondvallst[i] in d.values():
-                return i 
+       for i, n in enumerate(nums):
+           diff = target - n
+           if diff in d:
+               return [d[diff], i]
+           else:
+                d[n] = i 
+        
+
 
 
 c = Solution()
+print("First Test:")
 print(c.twoSum([2,7,11,15], 9))
-print("   runtime approx: , Solved: F    ")
+print()
+print("Second Test:")
+print(c.twoSum([3, 2, 4], 6))
+print()
+print("Third Test:")
+print(c.twoSum([3,3], 6))
+print("   runtime approx: , Solved: fF    ")
