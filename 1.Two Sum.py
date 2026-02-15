@@ -28,17 +28,22 @@
 #if not store index values as the values of the hash
 
 
+
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
        d = {}
-
+    #using unpacking to store the key-value pairs from enumerating nums
+    #i = iterable of nums, n = numbers in nums
        for i, n in enumerate(nums):
            diff = target - n
+           #checks if the diff is within the dict d, bc dicts get checked
+           #by keys, and in this case the key is the number from nums
            if diff in d:
                return [d[diff], i]
            else:
+            #stores n as kes, and i as  values
+            #backwards intuitively b/c we want to return the index
                 d[n] = i 
-        
 
 
 
