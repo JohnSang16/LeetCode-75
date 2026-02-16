@@ -46,5 +46,7 @@ class Solution:
     
 
 c = Solution()
-c.longestOnes([1,1,1,0,0,0,1,1,1,1,0], 2)
-print(f"test one: {c}")
+testone = c.longestOnes([1,1,1,0,0,0,1,1,1,1,0], 2)
+print(f"test one: {testone}, expected: 6")
+testtwo = c.longestOnes([0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], 3)
+print(f"test two: {testtwo}, expected: 10")
