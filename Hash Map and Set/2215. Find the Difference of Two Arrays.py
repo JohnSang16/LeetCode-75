@@ -29,7 +29,7 @@ class Solution:
 
         res1 = set()
         res2 = set()
-
+    
         for n in nums1Set:
             if n not in nums2Set:
                 res1.add(n)
